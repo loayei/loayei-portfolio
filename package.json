@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --port 3000",
     "build": "next build",
-    "prettier": "pretier --write .",
+    "prettier": "prettier --write .",
     "lint": "next lint"
   },
   "keywords": [],

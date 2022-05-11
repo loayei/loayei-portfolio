@@ -8,34 +8,37 @@ const LogoBox = styled.span`
   font-size: 18px;
   diplay: inline-flex;
   align-items: center;
-  height: 30px;
+  height: 20px;
   line-height: 20px;
   padding: 10px;
+  img{
+      transition: 400ms ease;
+  }
 
   &:hover img {
-    transform: rotate(20deg);
+    transform: scaleX(-1);
   }
-`;
+`
 
-const LOGO = () => {
-  const footPrintImg = `/images/footprint${useColorModeValue("", "-dark")}.png`;
+const Logo = () => {
+  const ghost = `/images/ghost${useColorModeValue("", "-dark")}.png`;
   return (
-    <Link href="/">
+    <Link href="/" scroll={false}>
       <a>
         <LogoBox>
-          <Image src={footPrintImg} width="20" height="20" alt="logo" />
+          <Image src={ghost} width="40" height="40" alt="logo" />
           <Text
-            color={useColorModeValue("gray.800", "whiteAlpha.900")}
-            fontFamily="M PLUS Rounded 1c"
+            color={useColorModeValue('gray.800", "whiteAlpha.900')}
+            fontFamily="M PLUS Rounded 1c, sans-serif"
             fontWeight="bold"
-            ml={3}
+            ml={4}
           >
             Loayei AlFarran
           </Text>
         </LogoBox>
       </a>
     </Link>
-  );
+  )
 };
 
-export default LOGO;
+export default Logo;
