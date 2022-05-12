@@ -1,16 +1,16 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Text, useColorModeValue } from "@chakra-ui/react";
-import styled from "@emotion/styled";
+import Link from "next/link"
+import Image from "next/image"
+import { Text, useColorModeValue } from '@chakra-ui/react'
+import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
   font-weight: bold;
   font-size: 18px;
-  diplay: inline-flex;
+  display: inline-flex;
   align-items: center;
-  height: 20px;
+  height: 30px;
   line-height: 20px;
-  padding: 10px;
+  padding: 22px 10px 0px 0px;
   img{
       transition: 400ms ease;
   }
@@ -29,7 +29,7 @@ const Logo = () => {
           <Image src={ghost} width="40" height="40" alt="logo" />
           <Text
             color={useColorModeValue('gray.800", "whiteAlpha.900')}
-            fontFamily="M PLUS Rounded 1c, sans-serif"
+            fontFamily="Orbitron"
             fontWeight="bold"
             ml={4}
           >

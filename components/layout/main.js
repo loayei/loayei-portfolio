@@ -12,10 +12,10 @@ const Main = ({ children, router }) => {
 
                 <Navbar path={router.asPath} />
 
-                <Container maxW="container.sm" pt={100}>
+                <Container maxW="container.sm" pt={20}>
                     {children}
                 </Container>
         </Box>
-    );
+    )
 }
-export default Main;
+export default Main

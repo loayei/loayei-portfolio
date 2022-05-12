@@ -15,16 +15,18 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import ThemeToggle from "./theme-toggle";
 
-const LinkItem = ({ href, children, path }) => {
+const LinkItem = ({ href, children, target, path }) => {
   const isActive = path === href;
   const notActiveColor = useColorModeValue("gray200", "whiteAlpha900");
   return (
     <NextLink href={href}>
       <Link
         p={2}
-        bg={isActive ? "grassTeal" : undefined}
+        bg={isActive ? "glassTeal" : undefined}
         color={isActive ? "#202023" : notActiveColor}
+        target={target}
       >
         {children}
       </Link>
@@ -54,7 +56,7 @@ const Navbar = (props) => {
         justifyContent="space-between"
       >
         <Flex align="center" mr={5}>
-          <Heading as="h1" size={"sm"} letterSpacing={"tighter"}>
+          <Heading as="h1" size={"lg"} letterSpacing={"tight"}>
             <Logo />
           </Heading>
         </Flex>
@@ -62,7 +64,7 @@ const Navbar = (props) => {
         <Stack
           direction={{ base: "column", md: "row" }}
           display={{ base: "none", md: "flex" }}
-          width={{ base: "100%", md: "auto" }}
+          width={{ base: "full", md: "auto" }}
           alignItems="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
@@ -82,6 +84,7 @@ const Navbar = (props) => {
         </Stack>
 
         <Box flex={1} align="right">
+          <ThemeToggle />
           <Box ml={2} display={{ base: "inline-block", md: "none" }}>
             <Menu>
               <MenuButton
@@ -91,21 +94,21 @@ const Navbar = (props) => {
                 aria-label="Options"
               />
               <MenuList>
-                  <NextLink href="/" passHref>
-                      <MenuItem as={Link}>Home</MenuItem>
-                  </NextLink>
-                  <NextLink href="/projects" passHref>
-                      <MenuItem as={Link}>Projects</MenuItem>
-                  </NextLink>
-                  <NextLink href="/experience" passHref>
-                      <MenuItem as={Link}>Experience</MenuItem>
-                  </NextLink>
-                  <NextLink href="/education" passHref>
-                      <MenuItem as={Link}>Education</MenuItem>
-                  </NextLink>
-                  <NextLink href="www.github.com/loayei" passHref>
-                      <MenuItem as={Link}>Github</MenuItem>
-                  </NextLink>
+                <NextLink href="/" passHref>
+                  <MenuItem as={Link}>Home</MenuItem>
+                </NextLink>
+                <NextLink href="/projects" passHref>
+                  <MenuItem as={Link}>Projects</MenuItem>
+                </NextLink>
+                <NextLink href="/experience" passHref>
+                  <MenuItem as={Link}>Experience</MenuItem>
+                </NextLink>
+                <NextLink href="/education" passHref>
+                  <MenuItem as={Link}>Education</MenuItem>
+                </NextLink>
+                <MenuItem as={Link} href="www.github.com/loayei">
+                  Github
+                </MenuItem>
               </MenuList>
             </Menu>
           </Box>
